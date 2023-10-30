@@ -13,6 +13,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
 
     <style>
+        :root {
+            --font: 'Montserrat', sans-serif;
+            --white: #FFFFFF;
+            --black: #000000;
+            --yellow: #ff9100;
+        }
+
         body {
             margin: 0 !important;
         }
@@ -71,19 +78,42 @@
 
         .menu ul li a:hover {
             /* border-bottom: 3px solid #ff9100; */
-            background-color: #ff9100;
+            background-color: var(--yellow);
         }
 
 
-        .banner {
+       /*  .banner {
             width: 100%;
             height: 500px;
             background-image: url('img/banner.jpg');
             background-size: cover;
             background-position: center;
             margin-bottom: 50px;
+            background-attachment: fixed;
 
+        } */
+
+        .banner {
+            /* display: flex; */
+            width: 100%;
+            height: 500px;
+            background-image: url('img/banner.jpg');
+            background-size: cover;
+            background-position: center center;
+            margin-bottom: 50px;
+            /* background-attachment: fixed; */
+            position: relative;
         }
+
+        .banner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }     
 
         .banner .text {
             height: 500px;
@@ -93,16 +123,17 @@
         }
 
         .banner .text h2 {
-            color: #fff;
+            color:var(--white);
             margin-top: 0;
             font-family: 'Kaushan Script', cursive;
             font-weight: 100;
+            font-size: 2em;
+            z-index: 999;
         }
 
         .container {
             width: 80%;
             margin: auto;
-            /* background-color: #91c76d; */
             min-height: 300px;
             display: flex;
         }
@@ -115,38 +146,83 @@
             background-image: url('img/burguer.png');
             background-repeat: no-repeat;
             background-size: contain;
-            /* background-color: #ff9100; */
         }
 
         .mkt .mkt-text {
             flex: 1;
             height: 500px;
+            margin-top: 15%;
             text-align: center;
-            padding-top: 10%;
-            /* background-color: #9d5d0a; */
-
-
-
+            /* background-color: #ff9100; */
         }
 
-        .mkt .mkt-text p {
+        .mkt .mkt-text p {}
+
+
+        .mkt .mkt-text p.off {
             color: #37a000;
+            font-size: 1.6em;
             font-weight: bold;
-            font-size: 22px;
+
         }
 
-        .mkt .mkt-text h2 {
-           font-weight: bold;
-           font-family: 'Kaushan Script', cursive;
-           font-size: 30px;
-        }
-
-        .mkt .mkt-text h3 {
+        .mkt .mkt-text p.name {
+            font-weight: bold;
+            font-size: 2em;
             font-family: 'Kaushan Script', cursive;
+        }
+
+        .mkt .mkt-text a {
+            background-color: #ff9100;
+            border-radius: 25px;
+            padding: 10px 30px;
+            color: white;
+            list-style: none;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+
+
+        }
+
+        .video-banner {
+            display: flex;
+            width: 100%;
+            height: 300px;
+            background-image: url('img/video-banner-three.jpg');
+            background-size: cover;
+            background-position: center center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .video-banner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            /* Cor escura com opacidade (alpha) de 0.5 para o filtro escuro */
+        }
+
+        .video-banner h2 {
+            color:var(--white);
+            margin-top: 0;
+            font-family: 'Kaushan Script', cursive;
+            font-weight: 100;
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            font-size: 3em;
+            z-index: 999;
         }
 
         .products {
             /* background-color: #ff9100; */
+
             min-height: 300px;
             width: 100%;
         }
@@ -155,6 +231,18 @@
             text-align: center;
             font-family: 'Kaushan Script', cursive;
             font-size: 3em;
+            /* background-color: #ff9100; */
+        }
+
+        .products h2::after {
+            content: "";
+            width: 50px;
+            height: 5px;
+            background-color: #ff9100;
+            position: absolute;
+            display: block;
+            right: 48%;
+            /* margin-top: 100px; */
         }
 
         .product-container {
@@ -200,7 +288,6 @@
             <li><a href="cursos.html"> Cursos </a></li>
             <li><a href="contato.html"> Contato </a></li>
         </ul>
-
     </nav>
 
     <section class="banner">
@@ -209,36 +296,34 @@
                 <span style="font-size: 3em;"> Fast Food </span>
                 <br>
                 <span style="font-size: 1em; font-family: 'Montserrat', sans-serif;">
-                    Os Lanches mais
-                    <strong style="background-color: rgba(255, 145, 0, 0.7); padding: 4px;">
-                        Saborosos
+                    The best  
+                    <strong style="background-color: rgba(255, 145, 0, 0.8); padding: 4px; border-radius: 10px;">
+                        snack
                     </strong>
-                    em Guaratinguetá - SP!!! </span>
+                    in the world
+                </span>
             </h2>
         </main>
-
-
     </section>
-
 
     <section class="mkt">
         <div class="container">
-
-            <div class="mkt-img"> TEXTO 1 </div>
-
+            <div class="mkt-img"> </div>
             <div class="mkt-text">
-                <p>40% off </p>
-                <h2>Cheese Vegetable Sandwich</h2>
-                <h3>Vegetable Sandwich + Cold Drink</h3>
+                <p class="off"> 40% off </p>
+                <p class="name"> Cheese Vegetable Sandwich </p>
+                <p class="description"> Vegetable Sandwich + Cold Drink </p>
+                <a href="#">Order Now</a>
             </div>
-
         </div>
     </section>
 
-    <hr>
+    <section class="video-banner">
+        <h2> How to make the best BURGUER!! </h2>
+    </section>
 
     <section class="products">
-        <h2>Produtos</h2>
+        <h2>Menu</h2>
         <div class="product-container">
 
             <div class="product-items ">
@@ -305,14 +390,8 @@
                 </div>
             </div>
 
-
-
-
-
-
         </div>
     </section>
-
 
 </body>
 
